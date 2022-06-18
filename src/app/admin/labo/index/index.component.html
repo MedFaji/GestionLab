@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+  
+  <a href="#" routerLink="/admin/labo/add" class="btn btn-success" role="button" aria-pressed="true" style="float: right;">Ajouter Labo</a>
+    <div class="panel-heading">
+      <h2>Liste Labo</h2>
+    </div>
+    <div class="panel-body">
+      
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nom Lab</th>
+            <th>Département</th>
+            <!-- <th>Resposanble</th> -->
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let labo of labos | async">
+            <td>{{labo.nomLabo}}</td>
+            <td>{{labo.depatement}}</td>
+            <td>
+              <button (click)="laboDetails(labo.id)" class="btn btn-warning" style="margin-left: 10px">Détails</button>
+              <button (click)="laboUpdate(labo.id)" class="btn btn-success" style="margin-left: 10px">MaJ</button>
+              <button (click)="deleteLabo(labo.id)" class="btn btn-danger" style="margin-left: 10px">Supp</button>
+              <!-- <button (click)="getBudgets(labo.id)" class="btn btn-info " style="margin-left: 10px;color:white">Budget</button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+  
+    <a href="#" routerLink="/respo/member/add/{{respo.laboratoire.id}}" class="btn btn-success" role="button" aria-pressed="true" style="float: right;margin-left: 10px">Ajouter Member</a>
+      <div class="panel-heading">
+        <h2>Liste Members :</h2>
+      </div>
+      <div class="panel-body">
+        
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Labo</th>
+              <!-- <th>Resposanble</th> -->
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let m of members">
+              <td>{{m.nom}}</td>
+              <td>{{m.prenom}}</td>
+              <td>{{m.laboratoire}}</td>
+              <td>
+                <button (click)="memberDetails(m.userId)" class="btn btn-warning" style="margin-left: 10px">Détails</button>
+                <button (click)="memberUpdate(m.userId)" class="btn btn-success" style="margin-left: 10px">MaJ</button>
+                <button (click)="deleteMember(m.userId)" class="btn btn-danger" style="margin-left: 10px">Supp</button>
+                <button  class="btn btn-info " style="margin-left: 10px;color:white">Budget</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

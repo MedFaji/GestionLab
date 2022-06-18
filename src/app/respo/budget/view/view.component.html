@@ -1,0 +1,29 @@
+<h2>Détails Budget</h2> 
+
+<hr/>
+<div *ngIf="budget">
+  <div>
+    <label><b>ID Budget: </b></label> {{budget.idBudget}}
+  </div>
+  <div>
+    <label><b>Annee Civile : </b></label> {{budget.anneeCivile}}
+  </div>  
+  <div>
+    <label><b>Dotation Base : </b></label> {{budget.dotationBase}}
+  </div>
+  <div>
+    <label><b>Dotation Recherche : </b></label> {{budget.dotationRecherche}}
+  </div>
+  <div>
+    <label><b>ID Labo: </b></label> {{labo.id}}
+  </div>
+  <div>
+    <label><b>Nom Lab: </b></label> {{labo.nomLabo}}
+  </div>
+  
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-warning" style="float: right;">Liste Budgets</button><br>

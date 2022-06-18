@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+  
+    <a href="#" routerLink="/admin/respo/add" class="btn btn-success" role="button" aria-pressed="true" style="float: right;">Ajouter Resposable</a>
+      <div class="panel-heading">
+        <h2>Liste Responsable :</h2>
+      </div>
+      <div class="panel-body">
+        
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Grade</th>
+              <th>Labo</th>
+              <!-- <th>Resposanble</th> -->
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let respo of respos | async">
+              <td>{{respo.nom}}</td>
+              <td>{{respo.prenom}}</td>
+              <td>{{respo.grade}}</td>
+              <td>{{respo.laboratoire.nomLabo}}</td>
+              <td>
+                <button (click)="respoDetails(respo.userId)" class="btn btn-warning" style="margin-left: 10px">Détails</button>
+                <button (click)="respoUpdate(respo.userId)" class="btn btn-success" style="margin-left: 10px">MaJ</button>
+                <button (click)="deleteRespo(respo.userId)" class="btn btn-danger" style="margin-left: 10px">Supp</button>
+                <!-- <button (click)="getBudgets(labo.id)" class="btn btn-info " style="margin-left: 10px;color:white">Budget</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

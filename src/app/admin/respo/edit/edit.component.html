@@ -1,0 +1,31 @@
+<h3>MaJ Respo</h3>
+<div [hidden]="submitted" >
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group mt-3">
+      <label for="nom">Nom :</label>
+      <input type="text" class="form-control mt-1" id="nom" required [(ngModel)]="respo.nom" name="nom">
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="prenom">Prenom :</label>
+      <input type="text" class="form-control mt-1" id="prenom" required [(ngModel)]="respo.prenom" name="prenom">
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="prenom">Grade :</label>
+        <input type="text" class="form-control mt-1" id="prenom" required [(ngModel)]="respo.grade" name="prenom">
+    </div>
+    
+    <div class="form-group mt-3">
+        <label for="labs">Laboratoire :</label>
+        <select ngModel name="labos" class="form-control mt-1" id="labs" (change)="onChange(t.value)" #t>
+            <option selected disabled>Selection le labo</option>
+            <option *ngFor="let l of labos | async" [value]="l.id">
+                {{ l.nomLabo }}
+            </option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3" style="float: right;">Valider</button>
+  </form>
+</div>

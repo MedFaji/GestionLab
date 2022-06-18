@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+  
+  <!-- <a href="#" routerLink="/admin/labo" class="btn btn-success" role="button" aria-pressed="true" style="float: right;margin-left: 10px ">Return</a> -->
+  <a href="#" routerLink="/respo/budget/add/{{respo.laboratoire.id}}" class="btn btn-success" role="button" aria-pressed="true" style="float: right;margin-left: 10px">Ajouter Budget pour le Lab {{respo.laboratoire.id}}</a>
+    <div class="panel-heading">
+      <h2>Liste Budgets de Lab {{respo.laboratoire.nomLabo}}</h2>
+    </div>
+    <div class="panel-body">
+      
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID Budget</th>
+            <th>Annee Civile</th>
+            <th>Dotation Base</th>
+            <th>Dotation Recherche</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of budgetsLab ">
+            <td>{{b.idBudget}}</td>
+            <td>{{b.anneeCivile}}</td>
+            <td>{{b.dotationBase}}</td>
+            <td>{{b.dotationRecherche}}</td>
+            <td>
+              <button (click)="budgetDetails(b.idBudget)" class="btn btn-warning" style="margin-left: 10px">Détails</button>
+              <button (click)="budgetUpdate(b.idBudget)" class="btn btn-success" style="margin-left: 10px">MaJ</button>
+              <button (click)="deleteBudget(b.idBudget)" class="btn btn-danger" style="margin-left: 10px">Supp</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

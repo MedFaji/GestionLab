@@ -1,0 +1,21 @@
+<h2>Détails Labo</h2> 
+
+<hr/>
+<div *ngIf="labo">
+  <div>
+    <label><b>ID Labo: </b></label> {{labo.id}}
+  </div>
+  <div>
+    <label><b>Nom Lab: </b></label> {{labo.nomLabo}}
+  </div>
+  <div>
+    <label><b>Département : </b></label> {{labo.depatement}}
+  </div>  
+  <div>
+    <label><b>Responsable : </b></label> {{respo.userId}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-warning" style="float: right;">Liste Labs</button><br>
