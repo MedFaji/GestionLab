@@ -25,7 +25,7 @@
                 <button (click)="memberDetails(m.userId)" class="btn btn-warning" style="margin-left: 10px">Détails</button>
                 <button (click)="memberUpdate(m.userId)" class="btn btn-success" style="margin-left: 10px">MaJ</button>
                 <button (click)="deleteMember(m.userId)" class="btn btn-danger" style="margin-left: 10px">Supp</button>
-                <button  class="btn btn-info " style="margin-left: 10px;color:white">Budget</button>
+                <button  (click)="memberBudget(m.userId)" class="btn btn-info " style="margin-left: 10px;color:white">Budget</button>
               </td>
             </tr>
           </tbody>

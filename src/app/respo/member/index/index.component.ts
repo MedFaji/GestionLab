@@ -68,5 +68,8 @@ export class IndexComponent implements OnInit {
   memberUpdate(id: number) {
     this.router.navigate(['/respo/member/update', id]);
   }
+  memberBudget(id: number) {
+    this.router.navigate(['/respo/member/membreBudgetDetails', id]);
+  }
 
 }

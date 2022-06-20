@@ -1,0 +1,120 @@
+<div class="panel panel-primary my-5">
+
+  <!-- <a href="#" routerLink="/admin/labo" class="btn btn-success" role="button" aria-pressed="true" style="float: right;margin-left: 10px ">Return</a> -->
+  <div class="panel-heading">
+    <h2>Liste Besoin Frais Inscription</h2>
+  </div>
+  <div class="panel-body">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>dateBesoin</th>
+          <th>description</th>
+          <th>fraisInscription</th>
+          <th>membre id</th>
+          <th>membre id</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of fraisInscriptions  | async">
+          <td>{{f.dateBesoin}}</td>
+          <td>{{f.description}}</td>
+          <td>{{f.fraisInscription}}</td>
+          <td>{{f.membre.userId}}</td>
+          <td>{{f.membre.nom}}</td>
+          <td>{{f.etatBesoin}}</td>
+          <td>
+            <button class="btn btn-warning" style="margin-left: 10px">Détails</button>
+            <button class="btn btn-success" style="margin-left: 10px">MaJ</button>
+            <button class="btn btn-danger" style="margin-left: 10px">Supp</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<hr>
+<div class="panel panel-primary">
+
+  <!-- <a href="#" routerLink="/admin/labo" class="btn btn-success" role="button" aria-pressed="true" style="float: right;margin-left: 10px ">Return</a> -->
+  <div class="panel-heading my-5">
+    <h2>Liste Besoin Mobilité</h2>
+  </div>
+  <div class="panel-body">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>dateBesoin</th>
+          <th>description</th>
+          <th>ReferenceBillet</th>
+          <th>prixBillet</th>
+          <th>FarisSejour</th>
+          
+          <th>membre id</th>
+          <th>membre nom</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of mobilites  | async">
+          <td>{{f.dateBesoin}}</td>
+          <td>{{f.description}}</td>
+          <td>{{f.ReferenceBillet}}</td>
+          <td>{{f.prixBillet}}</td>
+          <td>{{f.FarisSejour}}</td>
+          <td>{{f.membre.userId}}</td>
+          <td>{{f.membre.nom}}</td>
+          <td>{{f.etatBesoin}}</td>
+          <td>
+            <button class="btn btn-warning" style="margin-left: 10px">Détails</button>
+            <button class="btn btn-success" style="margin-left: 10px">MaJ</button>
+            <button class="btn btn-danger" style="margin-left: 10px">Supp</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr>
+<div class="panel panel-primary">
+
+  <!-- <a href="#" routerLink="/admin/labo" class="btn btn-success" role="button" aria-pressed="true" style="float: right;margin-left: 10px ">Return</a> -->
+  <div class="panel-heading my-5">
+    <h2>Liste Besoin Achat Materiel</h2>
+  </div>
+  <div class="panel-body">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>dateBesoin</th>
+          <th>description</th>
+          <th>libelle</th>
+          <th>prixMateriel</th>
+          <th>membre id</th>
+          <th>membre id</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of materials  | async">
+          <td>{{f.dateBesoin}}</td>
+          <td>{{f.description}}</td>
+          <td>{{f.libelle}}</td>
+          <td>{{f.prixMateriel}}</td>
+          <td>{{f.membre.userId}}</td>
+          <td>{{f.membre.nom}}</td>
+          <td>{{f.etatBesoin}}</td>
+          <td>
+            <button (click)="accept(f.idBesoin)" class="btn btn-success" style="margin-left: 10px">Accept</button>
+            <button (click)="reject(f.idBesoin)" class="btn btn-danger" style="margin-left: 10px">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

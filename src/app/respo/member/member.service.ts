@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BudgetMember } from './budgetmember';
 import { Member } from './member';
 
 @Injectable({
@@ -29,5 +30,9 @@ export class MemberService {
 
   getMemberList(): Observable<Member[]> {
     return this.http.get<Member[]>(`${this.baseUrl}/user/getAllMembre`);
+  }
+
+  addBudgetMember(budgetMembre: BudgetMember,idMembre: number): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/budgetmembre/saveBudget/${idMembre}`,budgetMembre);
   }
 }

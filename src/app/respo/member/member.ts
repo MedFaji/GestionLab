@@ -9,5 +9,5 @@ export class Member {
     prenom: String;
     cin: String;
     laboratoire : Labo;
-    budgetMembres: BudgetMember;
+    budgetMembres: BudgetMember[];
 }

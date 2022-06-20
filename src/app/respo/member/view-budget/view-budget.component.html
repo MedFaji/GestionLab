@@ -1,1 +1,33 @@
-<p>view-budget works!</p>
+<div class="panel panel-primary">
+  
+    <a href="#" routerLink="/respo/member/membreAddBudget/{{id}}" class="btn btn-success" role="button" aria-pressed="true" style="float: right;margin-left: 10px">Ajouter Budget</a>
+      <div class="panel-heading">
+        <h2>Liste Budget Member {{id}}:</h2>
+      </div>
+      <div class="panel-body">
+        
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Budget Personel</th>
+              <th>Annee Civile</th>
+              <!-- <th>Resposanble</th> -->
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let b of budgetMember">
+              <td>{{b.budgetPersonel}}</td>
+              <td>{{b.anneeCivile}}</td>
+              
+              <td>
+                <!-- <button (click)="memberDetails(m.userId)" class="btn btn-warning" style="margin-left: 10px">Détails</button>
+                <button (click)="memberUpdate(m.userId)" class="btn btn-success" style="margin-left: 10px">MaJ</button>
+                <button (click)="deleteMember(m.userId)" class="btn btn-danger" style="margin-left: 10px">Supp</button>
+                <button  (click)="memberBudget(m.userId)" class="btn btn-info " style="margin-left: 10px;color:white">Budget</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
