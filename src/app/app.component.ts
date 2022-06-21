@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'GestionLab';
   usertypeA = false;
-  usertypeR = true;
-  usertypeM = false;
+  usertypeR = false;
+  usertypeM = true;
 }
