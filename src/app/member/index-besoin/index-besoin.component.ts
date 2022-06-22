@@ -34,7 +34,7 @@ export class IndexBesoinComponent implements OnInit {
 
 
   reloadData() {
-    this.memberService.getMember(3).subscribe(data => {
+    this.memberService.getMember(4).subscribe(data => {
       console.log(data);
       this.member = data;
       this.fraisInscriptions = this.member.fraisInscriptions;
@@ -44,14 +44,18 @@ export class IndexBesoinComponent implements OnInit {
 
   }
 
-
-
-  accept(id: number) {
-    this.router.navigate(['/respo/budget/details', id]);
+  delete(id:number){
+    
+      this.memberService.deleteInscription(id)
+        .subscribe(
+          data => {
+            console.log(data);
+            this.reloadData();
+          },
+          
+          error => console.log(error));
+    }
   }
 
-  reject(id: number) {
-    this.router.navigate(['/respo/budget/update', id]);
-  }
 
-}
+

@@ -42,20 +42,30 @@ export class IndexComponent implements OnInit {
       console.log(data);
       this.fraisInscriptions = data;
       
-    }, error => console.log(error));;
+    }, error => console.log(error));
   }
 
 
 
   accept(id: number) {
- 
-      this.fraisInscriptions[0].etatBesoin = "ACCEPTED";
+    this.besoinService.getInscription(id).subscribe(data => {
+      console.log(data);
+      this.fraisInscription = data;
+      this.fraisInscription.etatBesoin = "ACCEPTED";
+      this.besoinService.updateInscription(this.fraisInscription)
+    }, error => console.log(error));;
+      
 
     }
 
 
   reject(id: number) {
-    this.fraisInscriptions[0].etatBesoin = "REJECTED";
+    this.besoinService.getInscription(id).subscribe(data => {
+      console.log(data);
+      this.fraisInscription = data;
+      this.fraisInscription.etatBesoin = "REJECTED";
+      this.besoinService.updateInscription(this.fraisInscription)
+    }, error => console.log(error));;
 
   }
 
