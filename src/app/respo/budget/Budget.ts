@@ -5,5 +5,6 @@ export class Budget {
     anneeCivile: number;
     dotationBase: number;
     dotationRecherche: number;
+    sommeRestante: number;
     laboratoire: Labo;
 }

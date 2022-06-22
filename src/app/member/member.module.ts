@@ -6,6 +6,7 @@ import { ViewBesoinComponent } from './view-besoin/view-besoin.component';
 import { IndexBesoinComponent } from './index-besoin/index-besoin.component';
 import { CreateBesoinComponent } from './create-besoin/create-besoin.component';
 import { EditBesoinComponent } from './edit-besoin/edit-besoin.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { EditBesoinComponent } from './edit-besoin/edit-besoin.component';
   ],
   imports: [
     CommonModule,
-    MemberRoutingModule
+    MemberRoutingModule,
+    FormsModule
   ]
 })
 export class MemberModule { }

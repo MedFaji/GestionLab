@@ -32,7 +32,7 @@ export class EditComponent implements OnInit {
 
 
   updateBudget() {
-    this.budgetService.updateBudget(this.budget)
+    this.budgetService.createBudget(this.budget,this.budget.laboratoire.id)
       .subscribe(data => {
         console.log(data);
         this.budget = new Budget();

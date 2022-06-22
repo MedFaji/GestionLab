@@ -32,6 +32,7 @@ export class EditComponent implements OnInit {
       .subscribe(data => {
         console.log(data)
         this.respo = data;
+        this.idLab = this.respo.laboratoire.id;
       }, error => console.log(error));
 
       this.reloadData();
@@ -39,7 +40,6 @@ export class EditComponent implements OnInit {
 
   reloadData() {
     this.labos = this.laboService.getLabosList();
-    
   }
   
   onChange(value: any){
@@ -49,12 +49,14 @@ export class EditComponent implements OnInit {
 
 
   updateRespo() {
-    this.respoService.createRespo(this.respo,this.idLab)
+
+    this.respoService.updateRespo(this.respo)
       .subscribe(data => {
         console.log(data);
         this.respo = new Respo();
         this.gotoList();
       }, error => console.log(error));
+      
   }
 
   onSubmit() {

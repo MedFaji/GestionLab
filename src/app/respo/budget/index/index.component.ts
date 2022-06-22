@@ -44,7 +44,7 @@ export class budgetIndexComponent implements OnInit {
 
   reloadData() {
 
-    this.respoService.getRespo(13).subscribe(data => {
+    this.respoService.getRespo(1).subscribe(data => {
 
       console.log(data)
       this.respo = data;

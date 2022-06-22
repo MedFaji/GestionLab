@@ -25,8 +25,8 @@ export class BudgetService {
       return this.http.post(`${this.baseUrl}/budgetlabo/saveBudget/${idLabo}`, budget);
     }
   
-    updateBudget( budget: Budget): Observable<Object> {
-      return this.http.put(`${this.baseUrl}/budgetlabo/updateBudget`, budget);
+    updateBudget( budgetLabo: Budget): Observable<Object> {
+      return this.http.put(`${this.baseUrl}/budgetlabo/updateBudget`, budgetLabo);
     }
   
     deleteBudget(id: number): Observable<any> {

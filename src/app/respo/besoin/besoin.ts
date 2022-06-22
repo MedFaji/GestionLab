@@ -3,8 +3,8 @@ import { Member } from "../member/member";
 export class Besoin {
 
     idBesoin: number;
-    dateBesoin: String;
+    dateBesoin: Date = new Date();
     description: String;
     etatBesoin: String;
-    membre: Member;
+    
 }

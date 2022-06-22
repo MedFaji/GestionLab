@@ -12,7 +12,6 @@ import { RespoService } from '../respo.service';
 export class IndexComponent implements OnInit {
 
   respos: Observable<Respo[]>;
-  idLab: number;
 
   constructor(private respoService: RespoService,
     private router: Router) {}
@@ -32,7 +31,7 @@ export class IndexComponent implements OnInit {
           console.log(data);
           this.reloadData();
         },
-        
+
         error => console.log(error));
   }
 

@@ -12,14 +12,13 @@
     </div>
 
     <div class="form-group mt-3">
-        <label for="prenom">Grade :</label>
-        <input type="text" class="form-control mt-1" id="prenom" required [(ngModel)]="respo.grade" name="prenom">
+        <label for="grade">Grade :</label>
+        <input type="text" class="form-control mt-1" id="grade" required [(ngModel)]="respo.grade" name="grade">
     </div>
     
     <div class="form-group mt-3">
         <label for="labs">Laboratoire :</label>
         <select ngModel name="labos" class="form-control mt-1" id="labs" (change)="onChange(t.value)" #t>
-            <option selected disabled>Selection le labo</option>
             <option *ngFor="let l of labos | async" [value]="l.id">
                 {{ l.nomLabo }}
             </option>

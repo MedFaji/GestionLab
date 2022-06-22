@@ -34,7 +34,7 @@ export class IndexComponent implements OnInit {
 
   reloadData() {
 
-    this.respoService.getRespo(14).subscribe(data => {
+    this.respoService.getRespo(1).subscribe(data => {
 
       this.respo = data;
       this.members = this.respo.laboratoire.membres;

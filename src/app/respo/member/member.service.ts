@@ -20,8 +20,8 @@ export class MemberService {
     return this.http.post(`${this.baseUrl}/user/saveMembre/${idLabo}`, member);
   }
 
-  updateMember( member: Member): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/user/updateMembre`, member);
+  updateMember(user: Member): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/user/updateMembre`, user);
   }
 
   deleteMember(id: number): Observable<any> {

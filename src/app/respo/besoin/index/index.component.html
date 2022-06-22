@@ -13,12 +13,12 @@
           <th>description</th>
           <th>fraisInscription</th>
           <th>membre id</th>
-          <th>membre id</th>
+          <th>membre Nom</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let f of fraisInscriptions  | async">
+        <tr *ngFor="let f of fraisInscriptions ">
           <td>{{f.dateBesoin}}</td>
           <td>{{f.description}}</td>
           <td>{{f.fraisInscription}}</td>
@@ -26,9 +26,9 @@
           <td>{{f.membre.nom}}</td>
           <td>{{f.etatBesoin}}</td>
           <td>
-            <button class="btn btn-warning" style="margin-left: 10px">Détails</button>
-            <button class="btn btn-success" style="margin-left: 10px">MaJ</button>
-            <button class="btn btn-danger" style="margin-left: 10px">Supp</button>
+            
+            <button (click)="accept(f.idBesoin)" class="btn btn-success" style="margin-left: 10px">Accepter</button>
+            <button (click)="reject(f.idBesoin)" class="btn btn-danger" style="margin-left: 10px">Rejeter</button>
           </td>
         </tr>
       </tbody>

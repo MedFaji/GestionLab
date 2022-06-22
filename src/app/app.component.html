@@ -56,6 +56,9 @@
 <div class="container">
   <br>
   <h2 style="text-align: center;">{{title}}</h2>
+  <h3 style="text-align: center; color: grey;" *ngIf="usertypeM"> Espace Member</h3>
+  <h3 style="text-align: center; color: grey" *ngIf="usertypeA"> Espace Admin</h3>
+  <h3 style="text-align: center; color: grey" *ngIf="usertypeR"> Espace Responsable</h3>
   <hr>
   <div class="card">
     <div class="card-body">

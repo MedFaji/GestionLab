@@ -13,9 +13,13 @@ import { Mobilite } from '../Mobilite';
 })
 export class IndexComponent implements OnInit {
 
-  fraisInscriptions : Observable<FraisInscription[]>;
+  fraisInscriptions: FraisInscription[];
   mobilites: Observable<Mobilite[]>;
   materials: Observable<AchatMaterial[]>;
+
+  fraisInscription: FraisInscription;
+  mobilite: Mobilite;
+  material: AchatMaterial;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +29,8 @@ export class IndexComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
+    this.fraisInscription = new FraisInscription();
 
     this.reloadData();
 
@@ -32,21 +38,29 @@ export class IndexComponent implements OnInit {
 
 
   reloadData() {
-    this.fraisInscriptions = this.besoinService.getInscriptionList();
-    this.mobilites = this.besoinService.getMobiliteList();
-    this.materials = this.besoinService.getMaterielList();
-
+     this.besoinService.getInscriptionList().subscribe(data => {
+      console.log(data);
+      this.fraisInscriptions = data;
+      
+    }, error => console.log(error));;
   }
 
 
 
   accept(id: number) {
-    this.router.navigate(['/respo/budget/details', id]);
-  }
+ 
+      this.fraisInscriptions[0].etatBesoin = "ACCEPTED";
+
+    }
+
 
   reject(id: number) {
-    this.router.navigate(['/respo/budget/update', id]);
+    this.fraisInscriptions[0].etatBesoin = "REJECTED";
+
   }
+
+
+
 
 
 

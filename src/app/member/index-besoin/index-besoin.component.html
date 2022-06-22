@@ -1,1 +1,32 @@
-<p>index-besoin works!</p>
+<div class="panel panel-primary my-5">
+
+    <a href="#" routerLink="/member/add" class="btn btn-success" role="button" aria-pressed="true" style="float: right;margin-left: 10px ">Ajouter Besoin</a>
+    <div class="panel-heading">
+      <h2>Liste Besoin Frais Inscription</h2>
+    </div>
+    <div class="panel-body">
+  
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>dateBesoin</th>
+            <th>description</th>
+            <th>Etat</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of fraisInscriptions">
+            <td>{{b.dateBesoin}}</td>
+            <td>{{b.description}}</td>
+            <td>{{b.etatBesoin}}</td>
+            <td>
+              <button class="btn btn-warning" style="margin-left: 10px">Détails</button>
+              <button class="btn btn-success" style="margin-left: 10px">MaJ</button>
+              <button class="btn btn-danger" style="margin-left: 10px">Supp</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

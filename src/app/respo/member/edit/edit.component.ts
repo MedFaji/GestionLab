@@ -20,18 +20,17 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
 
     this.member = new Member();
-
     this.id = this.route.snapshot.params['id'];
-    
     this.memberService.getMember(this.id)
       .subscribe(data => {
         console.log(data)
         this.member = data;
       }, error => console.log(error));
+      
   }
 
 
-  updateBudget() {
+  updateMember() {
     this.memberService.updateMember(this.member)
       .subscribe(data => {
         console.log(data);
@@ -41,9 +40,9 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit() {
+    this.updateMember();    
     this.submitted = true;
-    this.updateBudget();    
-    
+   
   }
 
   gotoList() {

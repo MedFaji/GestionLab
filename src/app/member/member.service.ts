@@ -1,19 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AchatMaterial } from './AchatMateriel';
-import { FraisInscription } from './FraisInscription';
-import { Mobilite } from './Mobilite';
+import { AchatMaterial } from '../respo/besoin/AchatMateriel';
+import { FraisInscription } from '../respo/besoin/FraisInscription';
+import { Mobilite } from '../respo/besoin/Mobilite';
+import { Member } from '../respo/member/member';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BesoinService {
-
+export class MemberService {
   private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
+  getMember(id: number): Observable<Member> {
+    return this.http.get<Member>(`${this.baseUrl}/user/findMembre/${id}`);
+  }
 
   getMobilite(id: number): Observable<Mobilite> {
     return this.http.get<Mobilite>(`${this.baseUrl}/besoin/findMobilite/${id}`);
@@ -34,7 +37,6 @@ export class BesoinService {
   getMobiliteList(): Observable<Mobilite[]> {
     return this.http.get<Mobilite[]>(`${this.baseUrl}/besoin/getAllMobilite`);
   }
-
 
 
   //ACHAT MATERIAL :
@@ -73,7 +75,7 @@ export class BesoinService {
   }
 
   updateInscription(fraisInscription: FraisInscription): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/besoin/updateInscription`, fraisInscription);
+    return this.http.put(`${this.baseUrl}/besoin/updateMateriel`, fraisInscription);
   }
 
   deleteInscription(id: number): Observable<any> {
@@ -83,8 +85,4 @@ export class BesoinService {
   getInscriptionList(): Observable<FraisInscription[]> {
     return this.http.get<FraisInscription[]>(`${this.baseUrl}/besoin/getAllInscription`);
   }
-
-
-
-
 }

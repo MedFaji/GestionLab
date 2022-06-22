@@ -1,4 +1,8 @@
 import { Labo } from "src/app/admin/labo/labo";
+import { AchatMaterial } from "../besoin/AchatMateriel";
+import { Besoin } from "../besoin/besoin";
+import { FraisInscription } from "../besoin/FraisInscription";
+import { Mobilite } from "../besoin/Mobilite";
 import { BudgetMember } from "./budgetmember";
 
 export class Member {
@@ -10,4 +14,8 @@ export class Member {
     cin: String;
     laboratoire : Labo;
     budgetMembres: BudgetMember[];
+    fraisInscriptions: FraisInscription[];
+    mobilites : Mobilite[];
+    achatMateriels: AchatMaterial[];
+
 }
